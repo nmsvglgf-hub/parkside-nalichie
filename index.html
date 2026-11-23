@@ -1,4 +1,4 @@
-<!doctype html><html lang="ru"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <title>Парксайд_Старт Продаж_</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -426,18 +426,19 @@ function bodyCore(prog,d){
       <div class="fld"><span class="lbl">Первоначальный взнос</span><div class="group">
       ${[30,20].map(v=>`<button type="button" class="chip" data-trpv="${v}" aria-pressed="${cs.trpv===v}">${v}%</button>`).join('')}</div></div>
       <div class="res"></div>`;
-  if(prog==='fam')return `<div class="fld"><span class="lbl">Количество детей</span><div class="group">
+  if(prog==='fam')return `<div class="hl"><b>Расчёт от красной цены со скидкой 5% — ${rub(d.disc)}</b></div>
+      <div class="fld"><span class="lbl">Количество детей</span><div class="group">
       ${KIDS.map(([v,txt,r])=>`<button type="button" class="chip" data-kids="${v}" aria-pressed="${cs.kids===v}">${txt} <small>${r}%</small></button>`).join('')}</div></div>
       <label class="fld"><span class="lbl">Первоначальный взнос</span><span class="rng"><input type="range" data-f="fpv" min="20" max="90" step="1" value="${cs.fpv}" aria-label="Первоначальный взнос"><output data-o="fpv"></output></span></label>
       <label class="fld"><span class="lbl">Срок кредита</span><span class="rng"><input type="range" data-f="term" min="5" max="30" step="1" value="${cs.term}" aria-label="Срок кредита"><output data-o="term"></output></span></label>
       <div class="res"></div>
-      <p class="fine">Аннуитетный платёж. Расчёт от красной цены ${rub(P)}.</p>`;
-  if(prog==='std')return `<div class="two">
+`;
+  if(prog==='std')return `<div class="hl"><b>Расчёт от красной цены со скидкой 5% — ${rub(d.disc)}</b></div>
+      <div class="two">
       <label class="fld"><span class="lbl">Ставка, % годовых</span><input type="number" data-f="srate" min="0" max="50" step="0.1" value="${cs.srate}" inputmode="decimal"></label>
       <label class="fld"><span class="lbl">Первоначальный взнос, %</span><input type="number" data-f="spv" min="0" max="95" step="1" value="${cs.spv}" inputmode="decimal"></label></div>
       <label class="fld"><span class="lbl">Срок кредита</span><span class="rng"><input type="range" data-f="sterm" min="1" max="30" step="1" value="${cs.sterm}" aria-label="Срок кредита"><output data-o="sterm"></output></span></label>
-      <div class="res"></div>
-      <p class="fine">Аннуитетный платёж. Расчёт от цены со скидкой 5% — ${rub(d.disc)}.</p>`;
+      <div class="res"></div>`;
   return `<div class="fld"><span class="lbl">Вариант рассрочки</span><div class="group">
       ${INS.map((o,i)=>`<button type="button" class="chip" data-ins="${i}" aria-pressed="${cs.ins===i}">${o.name}</button>`).join('')}</div></div>
       <div class="res"></div>`;
@@ -458,24 +459,25 @@ function calcPanel(root){
         <div class="stage"><div class="t">2-й год</div><div class="p">${rub(ann(s.b2,TR_RATE,TR_YEARS))}</div><div class="s">в месяц · банк выдаёт ещё 20% — ${rub(s.g2)}</div></div>
       </div>`;
   }else if(prog==='fam'){
+    const P=d.disc; // семейная считается от цены со скидкой 5%
     const [,,rate,max]=KIDS.find(k=>k[0]===cs.kids);
     let pv=P*cs.fpv/100,loan=P-pv,capped=false;
     if(loan>max){loan=max;pv=P-max;capped=true}
-    const pay=ann(loan,rate,cs.term),over=pay*cs.term*12-loan;
+    const pay=ann(loan,rate,cs.term);
     out('fpv',cs.fpv+'%');out('term',years(cs.term));
     el.innerHTML=`${capped?`<div class="warn">Лимит кредита по семейной ипотеке — ${rub(max)}. Взнос нужно увеличить до ${rub(pv)} (${(pv/P*100).toLocaleString('ru-RU',{maximumFractionDigits:1})}%).</div>`:''}
       <div class="big"><div class="t">Ежемесячный платёж</div><div class="p">${rub(pay)}</div><div class="s">ставка ${rate}% · ${cs.term*12} платежей</div></div>
-      <dl class="facts"><dt>Первоначальный взнос</dt><dd>${rub(pv)}</dd><dt>Сумма кредита</dt><dd>${rub(loan)}</dd><dt>Переплата по процентам</dt><dd>${rub(over)}</dd></dl>`;
+      <dl class="facts"><dt>Первоначальный взнос</dt><dd>${rub(pv)}</dd><dt>Сумма кредита</dt><dd>${rub(loan)}</dd></dl>`;
   }else if(prog==='std'){
     const D=d.disc,y=cs.sterm;out('sterm',years(y));
     if(!(cs.srate>=0&&cs.srate<=50)||!(cs.spv>=0&&cs.spv<100)){el.innerHTML='<div class="warn">Укажите ставку от 0 до 50% и взнос от 0 до 99%.</div>';return}
-    const pv=D*cs.spv/100,loan=D-pv,pay=ann(loan,cs.srate,y),over=pay*y*12-loan;
+    const pv=D*cs.spv/100,loan=D-pv,pay=ann(loan,cs.srate,y);
     el.innerHTML=`<div class="big"><div class="t">Ежемесячный платёж</div><div class="p">${rub(pay)}</div><div class="s">ставка ${String(cs.srate).replace('.',',')}% · ${y*12} платежей</div></div>
-      <dl class="facts"><dt>Цена со скидкой 5%</dt><dd>${rub(D)}</dd><dt>Первоначальный взнос ${String(cs.spv).replace('.',',')}%</dt><dd>${rub(pv)}</dd><dt>Сумма кредита</dt><dd>${rub(loan)}</dd><dt>Переплата по процентам</dt><dd>${rub(over)}</dd></dl>`;
+      <dl class="facts"><dt>Первоначальный взнос ${String(cs.spv).replace('.',',')}%</dt><dd>${rub(pv)}</dd><dt>Сумма кредита</dt><dd>${rub(loan)}</dd></dl>`;
   }else{
     const o=INS[cs.ins],price=o.k===.95?d.disc:Math.round(P*o.k),pv=price*o.pv/100,paid=o.m*o.months,rest=price-pv-paid;
     const term=o.months===12?'1 год':o.months+' месяцев';
-    el.innerHTML=`<dl class="facts"><dt>Стоимость по программе (${o.base})</dt><dd>${rub(price)}</dd><dt>Срок рассрочки</dt><dd>${term}</dd></dl>
+    el.innerHTML=`${o.k===.95?`<div class="hl"><b>Расчёт от красной цены со скидкой 5% — ${rub(price)}</b></div>`:''}<dl class="facts">${o.k===.95?'':`<dt>Стоимость по программе (${o.base})</dt><dd>${rub(price)}</dd>`}<dt>Срок рассрочки</dt><dd>${term}</dd></dl>
       <div class="stages">
         <div class="stage"><div class="t">Сразу</div><div class="p">${rub(pv)}</div><div class="s">первоначальный взнос ${o.pv}%</div></div>
         <div class="stage"><div class="t">Ежемесячно</div><div class="p">${o.m?rub(o.m):'—'}</div><div class="s">${o.m?o.months+' платежей, всего '+rub(paid):'без промежуточных платежей'}</div></div>
