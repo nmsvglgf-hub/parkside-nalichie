@@ -1,0 +1,554 @@
+<!doctype html><html lang="ru"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Парксайд_Старт Продаж_</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap">
+<style>
+/* Фирменный стиль ПРОСТОР (naprostore.ru): белый фон, светлые плашки с крупным скруглением, синие кнопки-таблетки, оранжевые акценты */
+:root{
+  --bg:#eef2f7; --surface:#f5f7fb; --card:#ffffff; --ink:#012e45; --muted:#6b7379; --line:#e3e9ef;
+  --blue:#1879d4; --blue-ink:#ffffff; --blue-soft:#ddebf8;
+  --accent:#f89332; --accent-ink:#ffffff; --accent-soft:#fee9d6;
+  --forest:#1d7a4e; --forest-bg:#dcf5e8; --street-bg:#ddebf8; --street:#1879d4;
+  --plan-bg:#ffffff;
+  --display:"Trebuchet MS","Lato",system-ui,sans-serif; --text:"Lato","Trebuchet MS",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --r-card:28px; --r-in:20px; --lav:#dddef8;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#08161f; --surface:#183245; --card:#112836; --ink:#e8f1f7; --muted:#9db0bd; --line:#1f3a4c;
+  --blue:#4ea3ef; --blue-ink:#04192a; --blue-soft:#163a55;
+  --accent:#f89332; --accent-ink:#2a1300; --accent-soft:#3d2a17;
+  --forest:#8fdcb4; --forest-bg:#173a2a; --street-bg:#163a55; --street:#9ccbf5;
+  --plan-bg:#f4f7fa; --lav:#24264d; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#08161f; --surface:#183245; --card:#112836; --ink:#e8f1f7; --muted:#9db0bd; --line:#1f3a4c;
+  --blue:#4ea3ef; --blue-ink:#04192a; --blue-soft:#163a55;
+  --accent:#f89332; --accent-ink:#2a1300; --accent-soft:#3d2a17;
+  --forest:#8fdcb4; --forest-bg:#173a2a; --street-bg:#163a55; --street:#9ccbf5;
+  --plan-bg:#f4f7fa; --lav:#24264d; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--text);font-size:15px;line-height:1.45}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.wrap{max-width:1240px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header.top{padding-block:20px 18px}
+.brandbar{display:flex;align-items:center;gap:14px;background:var(--card);border-radius:999px;padding:10px 22px;margin-bottom:22px}
+.brandbar .logo{display:inline-flex;background:#fff;border-radius:999px;padding:4px 10px}
+.brandbar img{height:34px;width:auto;display:block}
+.brandbar .city{white-space:nowrap;border-left:1px solid var(--muted);padding-left:12px;font-size:12px;line-height:1.3;color:var(--ink)}
+.brandbar .pill{margin-left:auto;background:var(--blue-soft);color:var(--ink);border-radius:999px;padding:9px 16px;font-size:14px}
+.eyebrow{font-size:13px;color:var(--blue);font-weight:700}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(28px,4vw,40px);line-height:1.15;margin:6px 0 10px;text-wrap:balance}
+.lead{color:var(--muted);max-width:44ch;margin:0}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:20px;align-items:stretch}
+.hero-text{background:var(--card);border-radius:var(--r-card);padding:28px 30px;display:flex;flex-direction:column;justify-content:center;gap:4px;min-width:0}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;min-width:0}
+.stat{border:0;font:inherit;color:var(--ink);text-align:left;border-radius:var(--r-in);padding:16px 18px;display:flex;flex-direction:column;justify-content:space-between;gap:6px;min-width:0;background:var(--surface)}
+.stat .v{font-family:var(--display);font-weight:700;font-size:28px;line-height:1.05;font-variant-numeric:tabular-nums}
+.stat .k{font-size:13px;color:var(--muted)}
+.stat.total{grid-column:span 2;background:var(--blue);color:var(--blue-ink)}
+.stat.total .v{font-size:44px}
+.stat.total .k{color:inherit;opacity:.85}
+.stat.range{grid-column:span 2;background:var(--accent-soft)}
+.stat.range .v{font-size:26px}
+.stat.room{cursor:pointer;background:var(--blue-soft)}
+.stat.room:nth-child(4){background:var(--lav)}
+.stat.room:nth-child(5){background:var(--forest-bg)}
+.stat.room:nth-child(6){background:var(--accent-soft)}
+.stat.room:hover{filter:brightness(.97)}
+.stat.room[aria-pressed="true"]{outline:2px solid var(--accent);outline-offset:-2px}
+@media (max-width:900px){.hero{grid-template-columns:1fr}.hero-text{padding:22px}}
+@media (max-width:480px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.stat.total .v{font-size:36px}}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg)}
+.bar .wrap{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;padding-block:12px}
+.group{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.group .lbl{font-size:13px;color:var(--muted);margin-right:2px}
+.chip{font:inherit;font-size:14px;border:0;background:var(--card);color:var(--ink);padding:8px 14px;border-radius:999px;cursor:pointer;display:inline-flex;gap:8px;align-items:center;font-variant-numeric:tabular-nums}
+.chip small{background:var(--accent);color:var(--accent-ink);font-size:12px;font-weight:700;min-width:26px;height:26px;padding:0 7px;border-radius:999px;display:inline-grid;place-items:center;margin:-4px -8px -4px 0}
+.chip:hover{background:var(--blue-soft)}
+.chip[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
+.chip[aria-pressed="true"] small{background:#fff;color:var(--accent)}
+.chip:focus-visible,select:focus-visible,.plan:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+select{font:inherit;font-size:14px;padding:8px 14px;border-radius:999px;border:0;background:var(--blue-soft);color:var(--ink)}
+.sortbox{margin-left:auto;display:flex;gap:8px;align-items:center}
+.summary{padding-block:12px 4px;color:var(--muted);font-variant-numeric:tabular-nums}
+.summary b{color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:20px;padding-block:12px 48px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r-card);overflow:hidden;display:flex;flex-direction:column;min-width:0;padding:10px;cursor:pointer;box-shadow:0 1px 2px rgba(1,46,69,.06),0 10px 28px -12px rgba(1,46,69,.22);transition:box-shadow .15s ease,border-color .15s ease,transform .15s ease}
+.card:hover{border-color:var(--blue);box-shadow:0 1px 2px rgba(1,46,69,.08),0 16px 36px -14px rgba(1,46,69,.35)}
+.plan{all:unset;cursor:pointer;display:block;background:var(--plan-bg);aspect-ratio:4/3;position:relative;overflow:hidden;width:100%;box-sizing:border-box;border-radius:var(--r-in)}
+.plan{border:1px solid var(--line)}
+.plan.zoom{cursor:zoom-in}
+.plan img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block;padding:44px 14px 14px;box-sizing:border-box}
+.tags{position:absolute;left:10px;top:10px;display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:12px;font-weight:700;padding:4px 10px;border-radius:999px;background:#012e45;color:#fff}
+.view{font-size:12px;font-weight:700;padding:4px 10px;border-radius:999px}
+.view.forest{background:var(--forest-bg);color:var(--forest)}
+.view.street{background:var(--street-bg);color:var(--street)}
+.booked{font-size:12px;font-weight:700;padding:4px 10px;border-radius:999px;background:var(--accent);color:var(--accent-ink)}
+.body{padding:14px 8px 6px;display:flex;flex-direction:column;gap:12px;flex:1}
+.head{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.head h2{font-family:var(--display);font-weight:400;font-size:19px;margin:0}
+.head h2 a{color:inherit;text-decoration:none}
+.head .open{font-size:13px;font-weight:700;color:var(--blue);white-space:nowrap;text-decoration:none}
+.card:hover .open{text-decoration:underline}
+.params{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:0}
+.params div{min-width:0}
+.params dt{font-size:12px;color:var(--muted)}
+.params dd{margin:2px 0 0;font-weight:700;font-variant-numeric:tabular-nums}
+.price{border-top:1px solid var(--line);padding-top:12px;margin-top:auto}
+.price .main{font-family:var(--display);font-weight:700;font-size:23px;font-variant-numeric:tabular-nums}
+.price .note{font-size:12px;color:var(--accent);font-weight:700}
+.price .sub{display:flex;justify-content:space-between;gap:8px;font-size:13px;color:var(--muted);margin-top:8px;font-variant-numeric:tabular-nums}
+.price .sub span b{color:var(--ink);font-weight:400}
+.empty{grid-column:1/-1;padding:40px;text-align:center;color:var(--muted)}
+footer{color:var(--muted);font-size:13px;padding-block:0 32px}
+dialog{border:none;border-radius:var(--r-card);padding:0;max-width:min(92vw,900px);background:var(--plan-bg)}
+dialog::backdrop{background:rgba(1,46,69,.6)}
+dialog img{display:block;width:100%;height:auto;max-height:80vh;object-fit:contain}
+dialog .cap{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 16px;background:var(--surface);color:var(--ink)}
+dialog button{font:inherit;font-size:14px;border:0;background:var(--blue-soft);color:var(--ink);border-radius:999px;padding:8px 16px;cursor:pointer}
+.offers{background:var(--blue-soft);border-radius:12px;padding:8px 12px;display:flex;flex-direction:column;gap:2px;font-variant-numeric:tabular-nums;font-size:13px}
+.offers .o-h{font-weight:700;font-size:13px}
+.offers .o-h small{font-weight:400;font-size:12px;color:var(--muted)}
+.offers .o-r{display:flex;justify-content:space-between;gap:8px}
+.offers .o-r span{color:var(--muted)}
+.offers .o-r b{white-space:nowrap}
+.calcrow{margin-top:10px;display:flex;flex-direction:column;gap:6px;background:var(--accent-soft);border-radius:12px;padding:8px}
+.calcrow .lbl{font-size:12px;color:var(--muted);display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;padding:0 2px}
+.calcrow .lbl b{font-size:13px;color:var(--ink)}
+.cbtns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px}
+.calcbtn{font:inherit;font-size:12.5px;font-weight:700;line-height:1.2;text-align:left;padding:7px 6px 7px 10px;border-radius:9px;border:0;background:var(--blue);color:var(--blue-ink);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:4px;box-shadow:0 1px 0 rgba(1,46,69,.2)}
+.calcbtn i{font-style:normal;font-size:14px;line-height:1;flex:none}
+.calcbtn:hover{filter:brightness(1.1)}
+.calcbtn:active{transform:translateY(1px);box-shadow:none}
+.calc input[type=number]{font:inherit;font-weight:700;width:100%;padding:10px 14px;border-radius:14px;border:0;background:var(--surface);color:var(--ink)}
+.calc .two{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:end}
+.calc .chip:not([aria-pressed="true"]){background:var(--surface);box-shadow:inset 0 0 0 1px var(--line)}
+.calc .chip:not([aria-pressed="true"]):hover{background:var(--blue-soft)}
+dialog.calc{background:var(--card);color:var(--ink);width:min(94vw,580px);max-height:92vh;overflow:auto;font-variant-numeric:tabular-nums}
+.calc .ch{display:flex;gap:14px;align-items:center;padding:16px 18px;background:var(--surface)}
+.calc .ch img{width:92px;height:70px;max-height:none;object-fit:contain;background:var(--plan-bg);border-radius:14px;flex:none;padding:4px}
+.calc .ch h3{font-family:var(--display);font-weight:400;font-size:19px;margin:0 0 2px}
+.calc .ch p{margin:0;font-size:13px;color:var(--muted)}
+.calc .ch p b{color:var(--ink);font-weight:700}
+.calc .x{margin-left:auto;align-self:flex-start}
+.calc .tabs{display:flex;flex-wrap:wrap;gap:8px;padding:16px 18px 0}
+.calc .cb{padding:16px 18px 20px;display:flex;flex-direction:column;gap:16px}
+.calc .fld{display:flex;flex-direction:column;gap:8px}
+.calc .fld>.lbl{font-size:13px;color:var(--muted)}
+.calc .rng{display:flex;gap:12px;align-items:center}
+.calc .rng input[type=range]{flex:1;accent-color:var(--accent)}
+.calc .rng output{min-width:9ch;text-align:right;font-weight:700}
+.calc .facts{display:grid;grid-template-columns:1fr auto;gap:8px 12px;margin:0;font-size:14px}
+.calc .facts dt{color:var(--muted)}
+.calc .facts dd{margin:0;text-align:right;font-weight:700}
+.calc .stages{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.calc .stage,.calc .big{background:var(--surface);border-radius:var(--r-in);padding:14px 16px}
+.calc .big{background:var(--blue-soft)}
+.calc .stage .t,.calc .big .t{font-size:13px;color:var(--muted)}
+.calc .stage .p,.calc .big .p{font-family:var(--display);font-weight:700;font-size:21px;margin:4px 0 2px}
+.calc .big .p{font-size:28px}
+.calc .stage .s,.calc .big .s{font-size:13px;color:var(--muted)}
+.calc .warn{background:var(--accent-soft);border-radius:16px;padding:12px 14px;font-size:13px}
+.calc .fine{font-size:12px;color:var(--muted);margin:0}
+@media (max-width:640px){.sortbox{margin-left:0}.bar .wrap{gap:8px 12px}.brandbar .pill{display:none}}
+@media (prefers-reduced-motion:no-preference){.card:hover{transform:translateY(-2px)}}
+.detail{padding-block:4px 48px}
+.back{font:inherit;font-size:14px;font-weight:700;border:0;background:var(--card);color:var(--blue);border-radius:999px;padding:10px 18px;cursor:pointer;box-shadow:0 1px 2px rgba(1,46,69,.08)}
+.dgrid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:20px;align-items:start;margin-top:14px}
+.dplan,.dinfo{background:var(--card);border:1px solid var(--line);border-radius:var(--r-card);box-shadow:0 10px 28px -12px rgba(1,46,69,.22);min-width:0}
+.dplan{padding:12px;position:sticky;top:calc(env(safe-area-inset-top,0px) + 16px)}
+.dplan .plan img{padding:52px 24px 24px}
+.dplan .hint{margin:10px 6px 2px;font-size:13px;color:var(--muted)}
+.dinfo{padding:22px;display:flex;flex-direction:column;gap:16px}
+.dinfo .eyebrow{margin:0}
+.dinfo h1{font-size:clamp(26px,3vw,34px);margin:2px 0 0}
+.dparams{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:0}
+.dparams dt{font-size:12px;color:var(--muted)}
+.dparams dd{margin:2px 0 0;font-weight:700;font-variant-numeric:tabular-nums}
+.dinfo .price .main{font-size:30px}
+.dinfo .offers{font-size:14px}
+.bookcta{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:24px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:var(--r-card);padding:16px;margin-bottom:40px;box-shadow:0 10px 28px -12px rgba(1,46,69,.22)}
+.bk-thumb{all:unset;cursor:pointer;display:block;border-radius:var(--r-in);overflow:hidden;box-sizing:border-box}
+.bk-thumb img{display:block;width:100%;height:auto;transition:transform .3s ease}
+.bk-thumb:hover img{transform:scale(1.02)}
+.bk-thumb:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.bk-text{display:flex;flex-direction:column;gap:10px;padding:8px 8px 8px 0;min-width:0}
+.bk-text h2{font-family:var(--display);font-weight:400;font-size:clamp(24px,2.8vw,32px);margin:0;line-height:1.15}
+.bk-text p{margin:0;color:var(--muted);max-width:52ch}
+.bk-actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:6px}
+.bk-actions .chip{box-shadow:inset 0 0 0 1px var(--line)}
+.bk-main{font:inherit;font-size:15px;font-weight:700;border:0;border-radius:999px;padding:12px 22px;background:var(--blue);color:var(--blue-ink);cursor:pointer}
+.bk-main:hover{filter:brightness(1.08)}
+.bk-apt{font:inherit;width:100%;display:flex;align-items:center;justify-content:space-between;gap:10px;text-align:left;border:1px solid var(--blue);background:var(--card);color:var(--ink);border-radius:14px;padding:10px 14px;cursor:pointer}
+.bk-apt span{display:flex;flex-direction:column;gap:2px}
+.bk-apt b{font-size:14px}
+.bk-apt small{font-size:12px;color:var(--muted)}
+.bk-apt i{font-style:normal;font-weight:700;font-size:18px;color:var(--blue)}
+.bk-apt:hover{background:var(--blue-soft)}
+dialog.book{width:min(96vw,1240px);height:92vh;max-width:none;background:var(--card);color:var(--ink);display:none;flex-direction:column}
+dialog.book[open]{display:flex}
+.book .bk-head{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;padding:12px 16px;border-bottom:1px solid var(--line)}
+.book .bk-head b{font-family:var(--display);font-size:17px;margin-right:auto}
+.book .bk-nav{display:flex;flex-wrap:wrap;gap:6px}
+.book .bk-nav .chip{background:var(--surface);box-shadow:inset 0 0 0 1px var(--line);border-radius:999px;padding:6px 12px;font-size:13px}
+.book .bk-pdf{font-size:14px;font-weight:700;color:var(--blue);text-decoration:none;padding:6px 10px}
+.book .bk-pages{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:12px;background:var(--bg)}
+.book .bk-page{flex:none;margin:0;position:relative;border-radius:12px;overflow:hidden;background:#fff}
+.book .bk-page img{max-height:none;width:100%;height:auto;object-fit:contain}
+.book .bk-page.hit{outline:3px solid var(--accent);outline-offset:-3px}
+.book .bk-page figcaption:empty{display:none}
+.book .bk-page figcaption{position:absolute;left:12px;top:12px;background:var(--accent);color:var(--accent-ink);font-weight:700;font-size:13px;padding:6px 12px;border-radius:999px}
+@media (max-width:760px){.bookcta{grid-template-columns:1fr}.bk-text{padding:0 4px 4px}.book .bk-head b{width:100%}}
+.bookfab{position:fixed;z-index:6;right:calc(16px + env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));font:inherit;font-size:14px;font-weight:700;display:inline-flex;align-items:center;gap:8px;border:0;border-radius:999px;padding:11px 18px;background:var(--accent);color:var(--accent-ink);cursor:pointer;box-shadow:0 8px 24px -6px rgba(1,46,69,.45)}
+.bookfab span{font-size:16px;line-height:1}
+.bookfab:hover{filter:brightness(1.06)}
+.actual{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;margin:4px 0 8px;background:var(--accent-soft);color:var(--ink);font-size:13px;font-weight:700;border-radius:999px;padding:6px 12px}
+.actual .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);flex:none}
+.calc .hl{display:flex;flex-direction:column;gap:2px;background:var(--forest-bg);color:var(--forest);border-radius:14px;padding:12px 14px}
+.calc .hl b{font-size:15px;color:var(--ink)}
+.calc .hl span{font-size:14px;font-weight:700}
+.calc .pvbox{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:10px 16px;background:var(--blue-soft);border-radius:var(--r-in);padding:14px 16px}
+.calc .pvbox .t{font-size:13px;color:var(--muted)}
+.calc .pvbox .p{font-family:var(--display);font-weight:700;font-size:28px;line-height:1.15}
+.calc .pvbox .cr{text-align:right}
+.calc .chip[data-trpv]{font-size:16px;font-weight:700;padding:10px 24px}
+.calc .pvbox .v{font-weight:700;font-size:16px}
+.disc{margin:0;font-size:12px;color:var(--ink);background:var(--accent-soft);border-radius:10px;padding:8px 12px}
+footer{padding-bottom:72px}
+.dcalcs-h{font-family:var(--display);font-weight:400;font-size:clamp(22px,2.6vw,28px);margin:28px 0 12px}
+.dcalcs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:start}
+.dcalc{background:var(--card);border:1px solid var(--line);border-radius:var(--r-card);box-shadow:0 10px 28px -12px rgba(1,46,69,.22);padding:20px 22px;display:flex;flex-direction:column;gap:14px;min-width:0;font-variant-numeric:tabular-nums}
+.dcalc h3{font-family:var(--display);font-weight:700;font-size:19px;margin:0}
+.cpanel{display:flex;flex-direction:column;gap:16px;min-width:0}
+.cpanel .res{display:flex;flex-direction:column;gap:12px}
+@media (max-width:860px){.dcalcs{grid-template-columns:1fr}.dgrid{grid-template-columns:1fr}.dplan{position:static}.dparams{grid-template-columns:repeat(2,minmax(0,1fr))}}
+</style>
+
+<header class="top wrap">
+  <div class="brandbar"><span class="logo"><img src="logo.png" alt="ПРОСТОР недвижимость" width="131" height="34"></span><span class="city">Москва<br>Простор-недвижимость</span><span class="pill">Департамент брокериджа</span></div>
+  <section class="hero" id="hero">
+    <div class="hero-text">
+      <div class="eyebrow">ЖК Парксайд · очередь 2 · цены на 23.11.2026</div>
+      <h1>Квартиры в наличии</h1>
+      <p class="actual"><span class="dot" aria-hidden="true"></span>Наличие свободных лотов актуально на 23.11.2026</p>
+      <p class="lead" id="lead"></p>
+    </div>
+    <div class="stats" id="stats"></div>
+  </section>
+</header>
+
+<div class="bar" id="bar"><div class="wrap">
+  <div class="group" role="group" aria-label="Комнатность" id="rooms"></div>
+  <div class="group" role="group" aria-label="Вид из окна" id="views"></div>
+  <label class="sortbox"><span class="group"><span class="lbl">Сортировка</span></span>
+    <select id="sort">
+      <option value="price-asc">Сначала дешевле</option>
+      <option value="price-desc">Сначала дороже</option>
+      <option value="area-asc">По площади</option>
+      <option value="sqm-asc">По цене за м²</option>
+      <option value="floor-asc">По этажу</option>
+    </select>
+  </label>
+</div></div>
+
+<main class="wrap" id="list">
+  <p class="summary" id="summary"></p>
+  <section class="grid" id="grid" aria-live="polite"></section>
+  <section class="bookcta">
+    <button type="button" class="bk-thumb bookbtn" data-page="2" aria-label="Открыть презентацию"><img src="book/p-02.jpg" alt="" loading="lazy" width="1600" height="1132"></button>
+    <div class="bk-text">
+      <div class="eyebrow">Материалы застройщика · июль 2026</div>
+      <h2>Презентация и поэтажные планы</h2>
+      <p>Планировочные решения 2-й очереди: поэтажные планы всех трёх корпусов, рендеры и информация о застройщике.</p>
+      <div class="bk-actions">
+        <button type="button" class="bookbtn bk-main" data-page="1">Открыть презентацию ›</button>
+        <button type="button" class="chip bookbtn" data-page="3">Корпус 1</button>
+        <button type="button" class="chip bookbtn" data-page="7">Корпус 2</button>
+        <button type="button" class="chip bookbtn" data-page="11">Корпус 3</button>
+      </div>
+    </div>
+  </section>
+</main>
+<section class="wrap detail" id="detail" hidden></section>
+<footer class="wrap">Цена со скидкой = красная цена минус 5% скидки застройщика. Без отделки. Планировки взяты из поэтажных планов застройщика. Платежи в калькуляторе ориентировочные.</footer>
+
+<dialog id="dlg"><img id="dlgImg" alt=""><div class="cap"><span id="dlgCap"></span><button type="button" id="dlgClose">Закрыть</button></div></dialog>
+
+<dialog id="calc" class="calc" aria-labelledby="calcTitle"><div id="calcBox"></div></dialog>
+
+<button type="button" class="bookfab bookbtn" data-page="1" aria-label="Открыть презентацию проекта"><span aria-hidden="true">▤</span> Презентация</button>
+
+<dialog id="book" class="book" aria-label="Презентация и поэтажные планы"><div class="bk-head">
+  <b>Презентация и поэтажные планы</b>
+  <span class="bk-nav"><button type="button" class="chip" data-go="1">Обложка</button><button type="button" class="chip" data-go="3">Корпус 1</button><button type="button" class="chip" data-go="7">Корпус 2</button><button type="button" class="chip" data-go="11">Корпус 3</button><button type="button" class="chip" data-go="17">Застройщик</button></span>
+  <a class="bk-pdf" href="presentation.pdf" target="_blank" rel="noopener">PDF</a>
+  <button type="button" id="bookClose">Закрыть</button>
+</div><div class="bk-pages" id="bkPages"></div></dialog>
+
+<script>
+const DATA = [{"k":2,"f":2,"n":7,"r":"st","a":29.7,"v":"улица","red":13764643,"blk":17377470,"disc":13076411,"img":"plans2/2-7.jpg"},{"k":1,"f":2,"n":3,"r":"st","a":29.9,"v":"улица","red":13856288,"blk":17493473,"disc":13163474,"img":"plans2/1-3.jpg"},{"k":1,"f":4,"n":25,"r":"st","a":29.9,"v":"улица","red":14155826,"blk":17872456,"disc":13448035,"img":"plans2/1-25.jpg"},{"k":2,"f":4,"n":29,"r":"st","a":29.9,"v":"улица","red":14155826,"blk":17872456,"disc":13448035,"img":"plans2/2-29.jpg"},{"k":1,"f":4,"n":27,"r":"st","a":33.9,"v":"улица","red":15516911,"blk":19594810,"disc":14741066,"img":"plans2/1-27.jpg"},{"k":2,"f":15,"n":139,"r":"1","a":37.1,"v":"улица","red":16005348,"blk":20212859,"disc":15205081,"img":"plans2/2-139.jpg"},{"k":2,"f":6,"n":51,"r":"1","a":36.8,"v":"улица","red":16014219,"blk":20224102,"disc":15213508,"img":"plans2/2-51.jpg"},{"k":1,"f":11,"n":97,"r":"1","a":36.4,"v":"улица","red":16180819,"blk":20434924,"disc":15371778,"img":"plans2/1-97.jpg"},{"k":1,"f":18,"n":165,"r":"1","a":37.1,"v":"улица","red":16212663,"blk":20475193,"disc":15402030,"img":"plans2/1-165.jpg"},{"k":1,"f":12,"n":107,"r":"1","a":36.4,"v":"улица","red":16248669,"blk":20520791,"disc":15436235,"img":"plans2/1-107.jpg"},{"k":2,"f":10,"n":91,"r":"1","a":36.8,"v":"улица","red":16288453,"blk":20571090,"disc":15474030,"img":"plans2/2-91.jpg"},{"k":2,"f":10,"n":89,"r":"1","a":37.1,"v":"улица","red":16419978,"blk":20737564,"disc":15598979,"img":"plans2/2-89.jpg"},{"k":1,"f":11,"n":95,"r":"1","a":37.1,"v":"улица","red":16489058,"blk":20824972,"disc":15664605,"img":"plans2/1-95.jpg"},{"k":2,"f":11,"n":99,"r":"1","a":37.1,"v":"улица","red":16489058,"blk":20824972,"disc":15664605,"img":"plans2/2-99.jpg"},{"k":1,"f":12,"n":105,"r":"1","a":37.1,"v":"улица","red":16558212,"blk":20912491,"disc":15730302,"img":"plans2/1-105.jpg"},{"k":3,"f":5,"n":44,"r":"1","a":38.1,"v":"улица","red":16674884,"blk":21060118,"disc":15841140,"img":"plans2/3-44.jpg"},{"k":2,"f":15,"n":140,"r":"1","a":39.5,"v":"улица","red":16732358,"blk":21132816,"disc":15895740,"img":"plans2/2-140.jpg"},{"k":2,"f":6,"n":50,"r":"1","a":39.5,"v":"улица","red":16876730,"blk":21315504,"disc":16032894,"img":"plans2/2-50.jpg"},{"k":3,"f":8,"n":80,"r":"1","a":38.1,"v":"улица","red":16889959,"blk":21332228,"disc":16045461,"img":"plans2/3-80.jpg"},{"k":3,"f":5,"n":41,"r":"1","a":38.6,"v":"улица","red":16891746,"blk":21334490,"disc":16047159,"img":"plans2/3-41.jpg"},{"k":3,"f":16,"n":169,"r":"1","a":38.6,"v":"улица","red":16891746,"blk":21334490,"disc":16047159,"img":"plans2/3-169.jpg"},{"k":1,"f":19,"n":182,"r":"1","a":35.7,"v":"лес","red":16944291,"blk":21401008,"disc":16097076,"img":"plans2/1-182.jpg"},{"k":2,"f":19,"n":180,"r":"1","a":39.5,"v":"улица","red":17021182,"blk":21498310,"disc":16170123,"img":"plans2/2-180.jpg"},{"k":1,"f":18,"n":166,"r":"1","a":39.7,"v":"улица","red":17034000,"blk":21514542,"disc":16182300,"img":"plans2/1-166.jpg"},{"k":3,"f":18,"n":189,"r":"1","a":38.6,"v":"улица","red":17036959,"blk":21518265,"disc":16185111,"img":"plans2/3-189.jpg"},{"k":2,"f":2,"n":13,"r":"1","a":38.7,"v":"лес","red":17061824,"blk":21549747,"disc":16208733,"img":"plans2/2-13.jpg"},{"k":3,"f":8,"n":77,"r":"1","a":38.6,"v":"улица","red":17109604,"blk":21610210,"disc":16254124,"img":"plans2/3-77.jpg"},{"k":2,"f":10,"n":90,"r":"1","a":39.5,"v":"улица","red":17165515,"blk":21680958,"disc":16307239,"img":"plans2/2-90.jpg"},{"k":3,"f":12,"n":128,"r":"1","a":38.1,"v":"улица","red":17176699,"blk":21695092,"disc":16317864,"img":"plans2/3-128.jpg"},{"k":1,"f":4,"n":32,"r":"1","a":38.2,"v":"лес","red":17226023,"blk":21757498,"disc":16364721,"img":"plans2/1-32.jpg"},{"k":3,"f":8,"n":79,"r":"1","a":39,"v":"улица","red":17285346,"blk":21832551,"disc":16421079,"img":"plans2/3-79.jpg"},{"k":2,"f":15,"n":146,"r":"1","a":38.4,"v":"лес","red":17315405,"blk":21870643,"disc":16449635,"img":"plans2/2-146.jpg"},{"k":1,"f":11,"n":96,"r":"1","a":39.7,"v":"улица","red":17324207,"blk":21881767,"disc":16457996,"img":"plans2/1-96.jpg"},{"k":3,"f":16,"n":170,"r":"1","a":39.7,"v":"улица","red":17368790,"blk":21938141,"disc":16500350,"img":"plans2/3-170.jpg"},{"k":3,"f":12,"n":125,"r":"1","a":38.6,"v":"улица","red":17400108,"blk":21977836,"disc":16530103,"img":"plans2/3-125.jpg"},{"k":1,"f":16,"n":152,"r":"1","a":38.5,"v":"лес","red":17437228,"blk":22024772,"disc":16565366,"img":"plans2/1-152.jpg"},{"k":2,"f":17,"n":166,"r":"1","a":38.4,"v":"лес","red":17469274,"blk":22065331,"disc":16595810,"img":"plans2/2-166.jpg"},{"k":2,"f":4,"n":35,"r":"1","a":38.8,"v":"лес","red":17494183,"blk":22096872,"disc":16619474,"img":"plans2/2-35.jpg"},{"k":1,"f":6,"n":52,"r":"1","a":38.5,"v":"лес","red":17514382,"blk":22122408,"disc":16638662,"img":"plans2/1-52.jpg"},{"k":3,"f":18,"n":190,"r":"1","a":39.7,"v":"улица","red":17518141,"blk":22127152,"disc":16642234,"img":"plans2/3-190.jpg"},{"k":3,"f":21,"n":220,"r":"1","a":39.2,"v":"улица","red":17520714,"blk":22130399,"disc":16644679,"img":"plans2/3-220.jpg"},{"k":2,"f":15,"n":144,"r":"1","a":38.9,"v":"лес","red":17538882,"blk":22153433,"disc":16661938,"img":"plans2/2-144.jpg"},{"k":2,"f":7,"n":66,"r":"1","a":38.4,"v":"лес","red":17546227,"blk":22162675,"disc":16668916,"img":"plans2/2-66.jpg"},{"k":2,"f":18,"n":176,"r":"1","a":38.4,"v":"лес","red":17546227,"blk":22162675,"disc":16668916,"img":"plans2/2-176.jpg"},{"k":3,"f":12,"n":127,"r":"1","a":39,"v":"улица","red":17578860,"blk":22203987,"disc":16699917,"img":"plans2/3-127.jpg"},{"k":1,"f":18,"n":172,"r":"1","a":38.5,"v":"лес","red":17591497,"blk":22220006,"disc":16711922,"img":"plans2/1-172.jpg"},{"k":3,"f":8,"n":78,"r":"1","a":39.7,"v":"улица","red":17592856,"blk":22221718,"disc":16713214,"img":"plans2/3-78.jpg"},{"k":2,"f":8,"n":76,"r":"1","a":38.4,"v":"лес","red":17623142,"blk":22260019,"disc":16741985,"img":"plans2/2-76.jpg"},{"k":2,"f":15,"n":145,"r":"1","a":39.1,"v":"лес","red":17628274,"blk":22266551,"disc":16746860,"img":"plans2/2-145.jpg"},{"k":1,"f":2,"n":9,"r":"1","a":40.7,"v":"лес","red":17635269,"blk":22275395,"disc":16753506,"img":"plans2/1-9.jpg"},{"k":1,"f":8,"n":72,"r":"1","a":38.5,"v":"лес","red":17668651,"blk":22317603,"disc":16785218,"img":"plans2/1-72.jpg"},{"k":2,"f":17,"n":164,"r":"1","a":38.9,"v":"лес","red":17694754,"blk":22350656,"disc":16810016,"img":"plans2/2-164.jpg"},{"k":1,"f":9,"n":82,"r":"1","a":38.5,"v":"лес","red":17745766,"blk":22415200,"disc":16858478,"img":"plans2/1-82.jpg"},{"k":1,"f":16,"n":150,"r":"1","a":39.2,"v":"лес","red":17751524,"blk":22422478,"disc":16863948,"img":"plans2/1-150.jpg"},{"k":2,"f":7,"n":64,"r":"1","a":38.9,"v":"лес","red":17772710,"blk":22449268,"disc":16884074,"img":"plans2/2-64.jpg"},{"k":2,"f":18,"n":174,"r":"1","a":38.9,"v":"лес","red":17772710,"blk":22449268,"disc":16884074,"img":"plans2/2-174.jpg"},{"k":2,"f":10,"n":96,"r":"1","a":38.4,"v":"лес","red":17777050,"blk":22454784,"disc":16888197,"img":"plans2/2-96.jpg"},{"k":3,"f":2,"n":13,"r":"1","a":39.2,"v":"лес","red":17784099,"blk":22463717,"disc":16894894,"img":"plans2/3-13.jpg"},{"k":3,"f":4,"n":35,"r":"1","a":38.4,"v":"лес","red":17820250,"blk":22509427,"disc":16929237,"img":"plans2/3-35.jpg"},{"k":1,"f":6,"n":50,"r":"1","a":39.2,"v":"лес","red":17830042,"blk":22521850,"disc":16938540,"img":"plans2/1-50.jpg"},{"k":2,"f":8,"n":74,"r":"1","a":38.9,"v":"лес","red":17850626,"blk":22547879,"disc":16958095,"img":"plans2/2-74.jpg"},{"k":2,"f":7,"n":65,"r":"1","a":39.1,"v":"лес","red":17863304,"blk":22563906,"disc":16970139,"img":"plans2/2-65.jpg"},{"k":2,"f":18,"n":175,"r":"1","a":39.1,"v":"лес","red":17863304,"blk":22563906,"disc":16970139,"img":"plans2/2-175.jpg"},{"k":3,"f":12,"n":126,"r":"1","a":39.7,"v":"улица","red":17891639,"blk":22599781,"disc":16997057,"img":"plans2/3-126.jpg"},{"k":3,"f":5,"n":47,"r":"1","a":38.4,"v":"лес","red":17899392,"blk":22609613,"disc":17004422,"img":"plans2/3-47.jpg"},{"k":1,"f":18,"n":170,"r":"1","a":39.2,"v":"лес","red":17908598,"blk":22621222,"disc":17013168,"img":"plans2/1-170.jpg"},{"k":3,"f":2,"n":12,"r":"1","a":40.2,"v":"лес","red":17928436,"blk":22646348,"disc":17032014,"img":"plans2/3-12.jpg"},{"k":2,"f":12,"n":116,"r":"1","a":38.4,"v":"лес","red":17930918,"blk":22649472,"disc":17034372,"img":"plans2/2-116.jpg"},{"k":3,"f":27,"n":268,"r":"1","a":39.2,"v":"улица","red":17963204,"blk":22690371,"disc":17065044,"img":"plans2/3-268.jpg"},{"k":1,"f":12,"n":112,"r":"1","a":38.5,"v":"лес","red":17977228,"blk":22708070,"disc":17078367,"img":"plans2/1-112.jpg"},{"k":1,"f":8,"n":70,"r":"1","a":39.2,"v":"лес","red":17987116,"blk":22720594,"disc":17087760,"img":"plans2/1-70.jpg"},{"k":2,"f":10,"n":94,"r":"1","a":38.9,"v":"лес","red":18006538,"blk":22745180,"disc":17106211,"img":"plans2/2-94.jpg"},{"k":1,"f":9,"n":80,"r":"1","a":39.2,"v":"лес","red":18065673,"blk":22820006,"disc":17162389,"img":"plans2/1-80.jpg"},{"k":2,"f":10,"n":95,"r":"1","a":39.1,"v":"лес","red":18098334,"blk":22861340,"disc":17193418,"img":"plans2/2-95.jpg"},{"k":3,"f":8,"n":83,"r":"1","a":38.4,"v":"лес","red":18137011,"blk":22910246,"disc":17230161,"img":"plans2/3-83.jpg"},{"k":2,"f":12,"n":114,"r":"1","a":38.9,"v":"лес","red":18162410,"blk":22942403,"disc":17254290,"img":"plans2/2-114.jpg"},{"k":3,"f":4,"n":37,"r":"1","a":39.3,"v":"лес","red":18234335,"blk":23033416,"disc":17322619,"img":"plans2/3-37.jpg"},{"k":2,"f":12,"n":115,"r":"1","a":39.1,"v":"лес","red":18255008,"blk":23059577,"disc":17342258,"img":"plans2/2-115.jpg"},{"k":3,"f":10,"n":107,"r":"1","a":38.4,"v":"лес","red":18295450,"blk":23110771,"disc":17380677,"img":"plans2/3-107.jpg"},{"k":1,"f":12,"n":110,"r":"1","a":39.2,"v":"лес","red":18301304,"blk":23118161,"disc":17386239,"img":"plans2/1-110.jpg"},{"k":3,"f":5,"n":49,"r":"1","a":39.3,"v":"лес","red":18315333,"blk":23135949,"disc":17399566,"img":"plans2/3-49.jpg"},{"k":3,"f":16,"n":175,"r":"1","a":39.3,"v":"лес","red":18315333,"blk":23135949,"disc":17399566,"img":"plans2/3-175.jpg"},{"k":1,"f":16,"n":151,"r":"1","a":41.2,"v":"лес","red":18336678,"blk":23162928,"disc":17419844,"img":"plans2/1-151.jpg"},{"k":2,"f":21,"n":197,"r":"1","a":43.9,"v":"улица","red":18378735,"blk":23216120,"disc":17459798,"img":"plans2/2-197.jpg"},{"k":3,"f":14,"n":156,"r":"1","a":39.8,"v":"лес","red":18382307,"blk":23220673,"disc":17463191,"img":"plans2/3-156.jpg"},{"k":1,"f":6,"n":51,"r":"1","a":41.2,"v":"лес","red":18417718,"blk":23265516,"disc":17496832,"img":"plans2/1-51.jpg"},{"k":3,"f":12,"n":131,"r":"1","a":38.4,"v":"лес","red":18453811,"blk":23311142,"disc":17531121,"img":"plans2/3-131.jpg"},{"k":3,"f":4,"n":38,"r":"1","a":39.8,"v":"лес","red":18464374,"blk":23324551,"disc":17541155,"img":"plans2/3-38.jpg"},{"k":3,"f":18,"n":195,"r":"1","a":39.3,"v":"лес","red":18477445,"blk":23341095,"disc":17553573,"img":"plans2/3-195.jpg"},{"k":3,"f":5,"n":50,"r":"1","a":39.8,"v":"лес","red":18546442,"blk":23428350,"disc":17619120,"img":"plans2/3-50.jpg"},{"k":3,"f":16,"n":176,"r":"1","a":39.8,"v":"лес","red":18546442,"blk":23428350,"disc":17619120,"img":"plans2/3-176.jpg"},{"k":3,"f":8,"n":85,"r":"1","a":39.3,"v":"лес","red":18558521,"blk":23443668,"disc":17630595,"img":"plans2/3-85.jpg"},{"k":1,"f":8,"n":71,"r":"1","a":41.2,"v":"лес","red":18579964,"blk":23470775,"disc":17650966,"img":"plans2/1-71.jpg"},{"k":1,"f":19,"n":181,"r":"1","a":41.2,"v":"лес","red":18579964,"blk":23470775,"disc":17650966,"img":"plans2/1-181.jpg"},{"k":3,"f":18,"n":196,"r":"1","a":39.8,"v":"лес","red":18710617,"blk":23636106,"disc":17775086,"img":"plans2/3-196.jpg"},{"k":3,"f":19,"n":206,"r":"1","a":39.8,"v":"лес","red":18792645,"blk":23739944,"disc":17853012,"img":"plans2/3-206.jpg"},{"k":3,"f":8,"n":86,"r":"1","a":39.8,"v":"лес","red":18792684,"blk":23739984,"disc":17853050,"img":"plans2/3-86.jpg"},{"k":3,"f":5,"n":48,"r":"1","a":41.1,"v":"лес","red":18826060,"blk":23782186,"disc":17884757,"img":"plans2/3-48.jpg"},{"k":3,"f":12,"n":133,"r":"1","a":39.3,"v":"лес","red":18882746,"blk":23853921,"disc":17938609,"img":"plans2/3-133.jpg"},{"k":1,"f":12,"n":111,"r":"1","a":41.2,"v":"лес","red":18904332,"blk":23881250,"disc":17959115,"img":"plans2/1-111.jpg"},{"k":3,"f":10,"n":110,"r":"1","a":39.8,"v":"лес","red":18956939,"blk":23947779,"disc":18009092,"img":"plans2/3-110.jpg"},{"k":3,"f":21,"n":223,"r":"1","a":40.5,"v":"лес","red":18963760,"blk":23956438,"disc":18015572,"img":"plans2/3-223.jpg"},{"k":3,"f":8,"n":84,"r":"1","a":41.1,"v":"лес","red":19075907,"blk":24098327,"disc":18122112,"img":"plans2/3-84.jpg"},{"k":3,"f":12,"n":134,"r":"1","a":39.8,"v":"лес","red":19121074,"blk":24155496,"disc":18165020,"img":"plans2/3-134.jpg"},{"k":3,"f":23,"n":239,"r":"1","a":40.5,"v":"лес","red":19127866,"blk":24164082,"disc":18171473,"img":"plans2/3-239.jpg"},{"k":3,"f":10,"n":108,"r":"1","a":41.1,"v":"лес","red":19242445,"blk":24309088,"disc":18280322,"img":"plans2/3-108.jpg"},{"k":3,"f":25,"n":255,"r":"1","a":40.5,"v":"лес","red":19291972,"blk":24371766,"disc":18327374,"img":"plans2/3-255.jpg"},{"k":3,"f":12,"n":132,"r":"1","a":41.1,"v":"лес","red":19408982,"blk":24519849,"disc":18438533,"img":"plans2/3-132.jpg"},{"k":3,"f":27,"n":271,"r":"1","a":40.5,"v":"лес","red":19456078,"blk":24579450,"disc":18483275,"img":"plans2/3-271.jpg"},{"k":1,"f":21,"n":194,"r":"2","a":55,"v":"улица","red":21616045,"blk":27312670,"disc":20535243,"img":"plans2/1-194.jpg"},{"k":2,"f":21,"n":198,"r":"2","a":55.1,"v":"улица","red":21655071,"blk":27362054,"disc":20572318,"img":"plans2/2-198.jpg"},{"k":3,"f":18,"n":191,"r":"2","a":57.1,"v":"улица","red":22167990,"blk":28011090,"disc":21059591,"img":"plans2/3-191.jpg"},{"k":2,"f":4,"n":34,"r":"2","a":55.7,"v":"лес","red":23204174,"blk":29322318,"disc":22043966,"img":"plans2/2-34.jpg"},{"k":2,"f":21,"n":202,"r":"2","a":57.2,"v":"лес","red":23882316,"blk":30180379,"disc":22688200,"img":"plans2/2-202.jpg"},{"k":3,"f":5,"n":40,"r":"2","a":62.5,"v":"улица","red":24250062,"blk":30645750,"disc":23037559,"img":"plans2/3-40.jpg"},{"k":1,"f":4,"n":23,"r":"2","a":64.8,"v":"улица","red":24310692,"blk":30722458,"disc":23095157,"img":"plans2/1-23.jpg"},{"k":2,"f":4,"n":27,"r":"2","a":64.8,"v":"улица","red":24310692,"blk":30722458,"disc":23095157,"img":"plans2/2-27.jpg"},{"k":3,"f":16,"n":168,"r":"2","a":62.7,"v":"улица","red":24327161,"blk":30743378,"disc":23110803,"img":"plans2/3-168.jpg"},{"k":1,"f":19,"n":178,"r":"2","a":59.4,"v":"улица","red":24365048,"blk":30791237,"disc":23146796,"img":"plans2/1-178.jpg"},{"k":2,"f":21,"n":201,"r":"2","a":60.1,"v":"лес","red":24451565,"blk":30900716,"disc":23228987,"img":"plans2/2-201.jpg"},{"k":3,"f":18,"n":188,"r":"2","a":62.7,"v":"улица","red":24551063,"blk":31026593,"disc":23323510,"img":"plans2/3-188.jpg"},{"k":3,"f":8,"n":76,"r":"2","a":62.5,"v":"улица","red":24584750,"blk":31069312,"disc":23355512,"img":"plans2/3-76.jpg"},{"k":2,"f":15,"n":138,"r":"2","a":65.7,"v":"улица","red":24646238,"blk":31147056,"disc":23413926,"img":"plans2/2-138.jpg"},{"k":3,"f":19,"n":198,"r":"2","a":62.7,"v":"улица","red":24662982,"blk":31168233,"disc":23429833,"img":"plans2/3-198.jpg"},{"k":1,"f":16,"n":144,"r":"2","a":65.7,"v":"улица","red":24760096,"blk":31291202,"disc":23522091,"img":"plans2/1-144.jpg"},{"k":3,"f":23,"n":234,"r":"2","a":61.9,"v":"улица","red":24792188,"blk":31331799,"disc":23552579,"img":"plans2/3-234.jpg"},{"k":3,"f":10,"n":100,"r":"2","a":62.5,"v":"улица","red":24807938,"blk":31351625,"disc":23567541,"img":"plans2/3-100.jpg"},{"k":1,"f":21,"n":197,"r":"2","a":59.5,"v":"лес","red":24836490,"blk":31387856,"disc":23594666,"img":"plans2/1-197.jpg"},{"k":1,"f":6,"n":44,"r":"2","a":65.7,"v":"улица","red":24874086,"blk":31435348,"disc":23630381,"img":"plans2/1-44.jpg"},{"k":1,"f":18,"n":164,"r":"2","a":65.7,"v":"улица","red":24987944,"blk":31579493,"disc":23738547,"img":"plans2/1-164.jpg"},{"k":2,"f":7,"n":58,"r":"2","a":65.7,"v":"улица","red":24987944,"blk":31579493,"disc":23738547,"img":"plans2/2-58.jpg"},{"k":2,"f":18,"n":168,"r":"2","a":65.7,"v":"улица","red":24987944,"blk":31579493,"disc":23738547,"img":"plans2/2-168.jpg"},{"k":1,"f":21,"n":198,"r":"2","a":59.9,"v":"лес","red":25002440,"blk":31597789,"disc":23752318,"img":"plans2/1-198.jpg"},{"k":3,"f":25,"n":250,"r":"2","a":61.9,"v":"улица","red":25013233,"blk":31611525,"disc":23762571,"img":"plans2/3-250.jpg"},{"k":3,"f":12,"n":124,"r":"2","a":62.5,"v":"улица","red":25031062,"blk":31634000,"disc":23779509,"img":"plans2/3-124.jpg"},{"k":1,"f":8,"n":64,"r":"2","a":65.7,"v":"улица","red":25101868,"blk":31723574,"disc":23846774,"img":"plans2/1-64.jpg"},{"k":2,"f":8,"n":68,"r":"2","a":65.7,"v":"улица","red":25101868,"blk":31723574,"disc":23846774,"img":"plans2/2-68.jpg"},{"k":3,"f":18,"n":194,"r":"2","a":59.4,"v":"лес","red":25175383,"blk":31816660,"disc":23916614,"img":"plans2/3-194.jpg"},{"k":1,"f":9,"n":74,"r":"2","a":65.7,"v":"улица","red":25215857,"blk":31867851,"disc":23955064,"img":"plans2/1-74.jpg"},{"k":3,"f":27,"n":266,"r":"2","a":61.9,"v":"улица","red":25234154,"blk":31891066,"disc":23972446,"img":"plans2/3-266.jpg"},{"k":2,"f":4,"n":32,"r":"2","a":64.4,"v":"улица","red":25262832,"blk":31927330,"disc":23999690,"img":"plans2/2-32.jpg"},{"k":3,"f":19,"n":204,"r":"2","a":59.4,"v":"лес","red":25290203,"blk":31961952,"disc":24025693,"img":"plans2/3-204.jpg"},{"k":2,"f":10,"n":88,"r":"2","a":65.7,"v":"улица","red":25329715,"blk":32011996,"disc":24063229,"img":"plans2/2-88.jpg"},{"k":1,"f":4,"n":28,"r":"2","a":64.7,"v":"улица","red":25379804,"blk":32075348,"disc":24110814,"img":"plans2/1-28.jpg"},{"k":1,"f":19,"n":179,"r":"2","a":59.4,"v":"лес","red":25399796,"blk":32100651,"disc":24129807,"img":"plans2/1-179.jpg"},{"k":1,"f":19,"n":183,"r":"2","a":59.6,"v":"лес","red":25484841,"blk":32208198,"disc":24210599,"img":"plans2/1-183.jpg"},{"k":1,"f":12,"n":104,"r":"2","a":65.7,"v":"улица","red":25557628,"blk":32300354,"disc":24279747,"img":"plans2/1-104.jpg"},{"k":2,"f":12,"n":108,"r":"2","a":65.7,"v":"улица","red":25557628,"blk":32300354,"disc":24279747,"img":"plans2/2-108.jpg"},{"k":3,"f":27,"n":267,"r":"2","a":66.8,"v":"улица","red":25729757,"blk":32518106,"disc":24443269,"img":"plans2/3-267.jpg"},{"k":3,"f":21,"n":219,"r":"2","a":68.3,"v":"улица","red":26107265,"blk":32995867,"disc":24801902,"img":"plans2/3-219.jpg"},{"k":3,"f":4,"n":33,"r":"2","a":62.4,"v":"улица","red":26297170,"blk":33236112,"disc":24982311,"img":"plans2/3-33.jpg"},{"k":3,"f":14,"n":157,"r":"2","a":62.7,"v":"лес","red":26300706,"blk":33240656,"disc":24985671,"img":"plans2/3-157.jpg"},{"k":3,"f":5,"n":46,"r":"2","a":62.2,"v":"лес","red":26334671,"blk":33283655,"disc":25017938,"img":"plans2/3-46.jpg"},{"k":3,"f":4,"n":39,"r":"2","a":62.5,"v":"лес","red":26339062,"blk":33289125,"disc":25022109,"img":"plans2/3-39.jpg"},{"k":2,"f":4,"n":33,"r":"2","a":64.4,"v":"лес","red":26364265,"blk":33321075,"disc":25046052,"img":"plans2/2-33.jpg"},{"k":3,"f":5,"n":45,"r":"2","a":62.4,"v":"улица","red":26418850,"blk":33390178,"disc":25097907,"img":"plans2/3-45.jpg"},{"k":3,"f":5,"n":51,"r":"2","a":62.5,"v":"лес","red":26460938,"blk":33443438,"disc":25137891,"img":"plans2/3-51.jpg"},{"k":1,"f":4,"n":29,"r":"2","a":64.7,"v":"лес","red":26486368,"blk":33475586,"disc":25162050,"img":"plans2/1-29.jpg"},{"k":1,"f":4,"n":33,"r":"2","a":64.8,"v":"лес","red":26527046,"blk":33527066,"disc":25200694,"img":"plans2/1-33.jpg"},{"k":2,"f":4,"n":37,"r":"2","a":64.8,"v":"лес","red":26527046,"blk":33527066,"disc":25200694,"img":"plans2/2-37.jpg"},{"k":3,"f":16,"n":177,"r":"2","a":62.7,"v":"лес","red":26545174,"blk":33549955,"disc":25217915,"img":"plans2/3-177.jpg"},{"k":1,"f":13,"n":123,"r":"2","a":65.7,"v":"лес","red":26644635,"blk":33675849,"disc":25312403,"img":"plans2/1-123.jpg"},{"k":3,"f":8,"n":82,"r":"2","a":62.2,"v":"лес","red":26698230,"blk":33743624,"disc":25363319,"img":"plans2/3-82.jpg"},{"k":3,"f":8,"n":81,"r":"2","a":62.4,"v":"улица","red":26783578,"blk":33851688,"disc":25444399,"img":"plans2/3-81.jpg"},{"k":3,"f":18,"n":197,"r":"2","a":62.7,"v":"лес","red":26789516,"blk":33859191,"disc":25450040,"img":"plans2/3-197.jpg"},{"k":3,"f":8,"n":87,"r":"2","a":62.5,"v":"лес","red":26826250,"blk":33905688,"disc":25484938,"img":"plans2/3-87.jpg"},{"k":2,"f":15,"n":147,"r":"2","a":65.7,"v":"лес","red":26893375,"blk":33990618,"disc":25548706,"img":"plans2/2-147.jpg"},{"k":3,"f":19,"n":207,"r":"2","a":62.7,"v":"лес","red":26911592,"blk":34013684,"disc":25566013,"img":"plans2/3-207.jpg"},{"k":1,"f":16,"n":153,"r":"2","a":65.7,"v":"лес","red":27017811,"blk":34148035,"disc":25666920,"img":"plans2/1-153.jpg"},{"k":3,"f":10,"n":105,"r":"2","a":62.4,"v":"улица","red":27026813,"blk":34159445,"disc":25675472,"img":"plans2/3-105.jpg"},{"k":3,"f":10,"n":111,"r":"2","a":62.5,"v":"лес","red":27069875,"blk":34214000,"disc":25716381,"img":"plans2/3-111.jpg"},{"k":1,"f":6,"n":53,"r":"2","a":65.7,"v":"лес","red":27142181,"blk":34305386,"disc":25785072,"img":"plans2/1-53.jpg"},{"k":2,"f":17,"n":167,"r":"2","a":65.7,"v":"лес","red":27142181,"blk":34305386,"disc":25785072,"img":"plans2/2-167.jpg"},{"k":1,"f":18,"n":173,"r":"2","a":65.7,"v":"лес","red":27266551,"blk":34462869,"disc":25903224,"img":"plans2/1-173.jpg"},{"k":2,"f":7,"n":67,"r":"2","a":65.7,"v":"лес","red":27266551,"blk":34462869,"disc":25903224,"img":"plans2/2-67.jpg"},{"k":2,"f":18,"n":177,"r":"2","a":65.7,"v":"лес","red":27266551,"blk":34462869,"disc":25903224,"img":"plans2/2-177.jpg"},{"k":3,"f":12,"n":129,"r":"2","a":62.4,"v":"улица","red":27269986,"blk":34467202,"disc":25906486,"img":"plans2/3-129.jpg"},{"k":3,"f":23,"n":241,"r":"2","a":62.4,"v":"лес","red":27269986,"blk":34467202,"disc":25906486,"img":"plans2/3-241.jpg"},{"k":3,"f":12,"n":135,"r":"2","a":62.5,"v":"лес","red":27313438,"blk":34522188,"disc":25947766,"img":"plans2/3-135.jpg"},{"k":1,"f":8,"n":73,"r":"2","a":65.7,"v":"лес","red":27390921,"blk":34620221,"disc":26021375,"img":"plans2/1-73.jpg"},{"k":2,"f":8,"n":77,"r":"2","a":65.7,"v":"лес","red":27390921,"blk":34620221,"disc":26021375,"img":"plans2/2-77.jpg"},{"k":3,"f":25,"n":257,"r":"2","a":62.4,"v":"лес","red":27513221,"blk":34774896,"disc":26137560,"img":"plans2/3-257.jpg"},{"k":1,"f":9,"n":83,"r":"2","a":65.7,"v":"лес","red":27515357,"blk":34777638,"disc":26139589,"img":"plans2/1-83.jpg"},{"k":2,"f":10,"n":97,"r":"2","a":65.7,"v":"лес","red":27639596,"blk":34934924,"disc":26257616,"img":"plans2/2-97.jpg"},{"k":3,"f":27,"n":273,"r":"2","a":62.4,"v":"лес","red":27756518,"blk":35082840,"disc":26368692,"img":"plans2/3-273.jpg"},{"k":1,"f":12,"n":113,"r":"2","a":65.7,"v":"лес","red":27888402,"blk":35249692,"disc":26493982,"img":"plans2/1-113.jpg"},{"k":2,"f":12,"n":117,"r":"2","a":65.7,"v":"лес","red":27888402,"blk":35249692,"disc":26493982,"img":"plans2/2-117.jpg"},{"k":3,"f":21,"n":224,"r":"2","a":68.7,"v":"лес","red":28745591,"blk":36334400,"disc":27308312,"img":"plans2/3-224.jpg"},{"k":3,"f":23,"n":240,"r":"2","a":68.7,"v":"лес","red":29004316,"blk":36661824,"disc":27554100,"img":"plans2/3-240.jpg"},{"k":3,"f":25,"n":256,"r":"2","a":68.7,"v":"лес","red":29263177,"blk":36989317,"disc":27800018,"img":"plans2/3-256.jpg"},{"k":3,"f":27,"n":272,"r":"2","a":68.7,"v":"лес","red":29521970,"blk":37316878,"disc":28045872,"img":"plans2/3-272.jpg"},{"k":3,"f":21,"n":225,"r":"2","a":67.9,"v":"лес","red":31853044,"blk":40266533,"disc":30260392,"img":"plans2/3-225.jpg"},{"k":2,"f":15,"n":142,"r":"3","a":84.2,"v":"улица","red":32467099,"blk":41043543,"disc":30843744,"img":"plans2/2-142.jpg"},{"k":2,"f":17,"n":162,"r":"3","a":84.2,"v":"улица","red":32767693,"blk":41423958,"disc":31129308,"img":"plans2/2-162.jpg"},{"k":1,"f":16,"n":148,"r":"3","a":84.9,"v":"улица","red":32887288,"blk":41575275,"disc":31242924,"img":"plans2/1-148.jpg"},{"k":2,"f":7,"n":62,"r":"3","a":84.2,"v":"улица","red":32917990,"blk":41614166,"disc":31272090,"img":"plans2/2-62.jpg"},{"k":2,"f":18,"n":172,"r":"3","a":84.2,"v":"улица","red":32917990,"blk":41614166,"disc":31272090,"img":"plans2/2-172.jpg"},{"k":1,"f":13,"n":119,"r":"3","a":82.5,"v":"лес","red":32933092,"blk":41633212,"disc":31286438,"img":"plans2/1-119.jpg"},{"k":2,"f":8,"n":72,"r":"3","a":84.2,"v":"улица","red":33068287,"blk":41804374,"disc":31414873,"img":"plans2/2-72.jpg"},{"k":1,"f":18,"n":168,"r":"3","a":84.9,"v":"улица","red":33190382,"blk":41958854,"disc":31530862,"img":"plans2/1-168.jpg"},{"k":1,"f":8,"n":68,"r":"3","a":84.9,"v":"улица","red":33341928,"blk":42150643,"disc":31674832,"img":"plans2/1-68.jpg"},{"k":2,"f":10,"n":92,"r":"3","a":84.2,"v":"улица","red":33368881,"blk":42184705,"disc":31700437,"img":"plans2/2-92.jpg"},{"k":1,"f":16,"n":149,"r":"3","a":82.5,"v":"лес","red":33394762,"blk":42217478,"disc":31725024,"img":"plans2/1-149.jpg"},{"k":2,"f":15,"n":143,"r":"3","a":83.1,"v":"лес","red":33481572,"blk":42327317,"disc":31807493,"img":"plans2/2-143.jpg"},{"k":1,"f":9,"n":78,"r":"3","a":84.9,"v":"улица","red":33493390,"blk":42342262,"disc":31818720,"img":"plans2/1-78.jpg"},{"k":1,"f":6,"n":49,"r":"3","a":82.5,"v":"лес","red":33548708,"blk":42412260,"disc":31871272,"img":"plans2/1-49.jpg"},{"k":2,"f":12,"n":112,"r":"3","a":84.2,"v":"улица","red":33669475,"blk":42565121,"disc":31986001,"img":"plans2/2-112.jpg"},{"k":1,"f":18,"n":169,"r":"3","a":82.5,"v":"лес","red":33702570,"blk":42606960,"disc":32017442,"img":"plans2/1-169.jpg"},{"k":2,"f":17,"n":163,"r":"3","a":83.1,"v":"лес","red":33791535,"blk":42719549,"disc":32101958,"img":"plans2/2-163.jpg"},{"k":1,"f":8,"n":69,"r":"3","a":82.5,"v":"лес","red":33856432,"blk":42801660,"disc":32163611,"img":"plans2/1-69.jpg"},{"k":2,"f":7,"n":63,"r":"3","a":83.1,"v":"лес","red":33946599,"blk":42915748,"disc":32249269,"img":"plans2/2-63.jpg"},{"k":2,"f":18,"n":173,"r":"3","a":83.1,"v":"лес","red":33946599,"blk":42915748,"disc":32249269,"img":"plans2/2-173.jpg"},{"k":1,"f":12,"n":108,"r":"3","a":84.9,"v":"улица","red":33948114,"blk":42917714,"disc":32250708,"img":"plans2/1-108.jpg"},{"k":1,"f":9,"n":79,"r":"3","a":82.5,"v":"лес","red":34010295,"blk":42996442,"disc":32309780,"img":"plans2/1-79.jpg"},{"k":2,"f":8,"n":73,"r":"3","a":83.1,"v":"лес","red":34101581,"blk":43111864,"disc":32396502,"img":"plans2/2-73.jpg"},{"k":2,"f":10,"n":93,"r":"3","a":83.1,"v":"лес","red":34411627,"blk":43504263,"disc":32691046,"img":"plans2/2-93.jpg"},{"k":1,"f":12,"n":109,"r":"3","a":82.5,"v":"лес","red":34472048,"blk":43580708,"disc":32748445,"img":"plans2/1-109.jpg"},{"k":3,"f":16,"n":172,"r":"3","a":83.1,"v":"улица","red":34621454,"blk":43769767,"disc":32890382,"img":"plans2/3-172.jpg"},{"k":2,"f":12,"n":113,"r":"3","a":83.1,"v":"лес","red":34721673,"blk":43896495,"disc":32985589,"img":"plans2/2-113.jpg"},{"k":3,"f":16,"n":173,"r":"3","a":83.4,"v":"лес","red":34745858,"blk":43927197,"disc":33008565,"img":"plans2/3-173.jpg"},{"k":3,"f":18,"n":192,"r":"3","a":83.1,"v":"улица","red":34940558,"blk":44173550,"disc":33193530,"img":"plans2/3-192.jpg"},{"k":3,"f":18,"n":193,"r":"3","a":83.4,"v":"лес","red":35066197,"blk":44332438,"disc":33312887,"img":"plans2/3-193.jpg"},{"k":3,"f":23,"n":237,"r":"3","a":90.4,"v":"улица","red":38864497,"blk":49138909,"disc":36921272,"img":"plans2/3-237.jpg"},{"k":3,"f":25,"n":253,"r":"3","a":90.4,"v":"улица","red":39211723,"blk":49578343,"disc":37251137,"img":"plans2/3-253.jpg"},{"k":3,"f":23,"n":238,"r":"3","a":91.3,"v":"лес","red":39249870,"blk":49626572,"disc":37287376,"img":"plans2/3-238.jpg"},{"k":3,"f":25,"n":254,"r":"3","a":91.3,"v":"лес","red":39600645,"blk":50070381,"disc":37620612,"img":"plans2/3-254.jpg"},{"k":3,"f":27,"n":269,"r":"3","a":90.5,"v":"улица","red":39602528,"blk":50072745,"disc":37622402,"img":"plans2/3-269.jpg"},{"k":3,"f":27,"n":270,"r":"3","a":91.3,"v":"лес","red":39951237,"blk":50514008,"disc":37953675,"img":"plans2/3-270.jpg"},{"k":3,"f":21,"n":221,"r":"3","a":95.9,"v":"улица","red":44360079,"blk":56092965,"disc":42142075,"img":"plans2/3-221.jpg"},{"k":3,"f":21,"n":222,"r":"3","a":96.8,"v":"лес","red":44774937,"blk":56617933,"disc":42536190,"img":"plans2/3-222.jpg"}];
+const ROOMS=[['all','Все'],['st','Студии'],['1','1-комн.'],['2','2-комн.'],['3','3-комн.']];
+const ROOMNAME={st:'Студия','1':'1-комн.','2':'2-комн.','3':'3-комн.'};
+const VIEWS=[['all','Любой вид'],['лес','На лес'],['улица','На улицу']];
+const fmt=n=>n.toLocaleString('ru-RU').replace(/,/g,' ');
+const mln=n=>(n/1e6).toLocaleString('ru-RU',{maximumFractionDigits:1})+' млн';
+let st={room:'all',view:'all',sort:'price-asc'};
+const save=()=>{try{localStorage.setItem('parkside-filters',JSON.stringify(st))}catch(e){}};
+const viewClass=v=>v==='лес'?'forest':'street';
+const viewText=v=>v==='лес'?'Вид на лес':v==='улица'?'Вид на улицу':'Лес и улица';
+
+function chips(el,list,key,countFn){
+  el.innerHTML='';
+  list.forEach(([v,t])=>{
+    const b=document.createElement('button');b.type='button';b.className='chip';b.id=key+'-'+v;
+    b.setAttribute('aria-pressed',st[key]===v);
+    b.innerHTML=t+(countFn?' <small>'+countFn(v)+'</small>':'');
+    b.onclick=()=>{st[key]=v;save();render()};
+    el.appendChild(b);
+  });
+}
+function render(){
+  const byView=DATA.filter(d=>st.view==='all'||d.v===st.view);
+  chips(document.getElementById('rooms'),ROOMS,'room',v=>byView.filter(d=>v==='all'||d.r===v).length);
+  const byRoom=DATA.filter(d=>st.room==='all'||d.r===st.room);
+  chips(document.getElementById('views'),VIEWS,'view',v=>byRoom.filter(d=>v==='all'||d.v===v).length);
+  document.getElementById('sort').value=st.sort;
+  document.querySelectorAll('.stat.room').forEach(s=>s.setAttribute('aria-pressed',st.room===s.dataset.room));
+  let list=DATA.filter(d=>(st.room==='all'||d.r===st.room)&&(st.view==='all'||d.v===st.view));
+  const [f,dir]=st.sort.split('-');
+  const key={price:d=>d.disc,area:d=>d.a,sqm:d=>d.disc/d.a,floor:d=>d.f*1000+d.n}[f];
+  list.sort((a,b)=>(key(a)-key(b))*(dir==='desc'?-1:1));
+  const s=document.getElementById('summary');
+  const filtered=st.room!=='all'||st.view!=='all';
+  const what=[st.room!=='all'?ROOMS.find(r=>r[0]===st.room)[1]:'',st.view!=='all'?(st.view==='лес'?'вид на лес':'вид на улицу'):''].filter(Boolean).join(', ');
+  const reset=filtered?' <button type="button" class="chip" id="reset">Показать все '+DATA.length+'</button>':'';
+  if(list.length){const ps=list.map(d=>d.disc);s.innerHTML='Показано <b>'+list.length+'</b> из '+DATA.length+(filtered?' (фильтр: '+what+')':'')+' · от <b>'+mln(Math.min(...ps))+'</b> до <b>'+mln(Math.max(...ps))+' ₽</b> со скидкой'+reset}else s.innerHTML=reset;
+  const rb=document.getElementById('reset');if(rb)rb.onclick=()=>{st.room='all';st.view='all';save();render()};
+  const g=document.getElementById('grid');
+  g.innerHTML=list.length?list.map(card).join(''):'<p class="empty">Нет квартир с такими параметрами. Выберите другую комнатность или вид.</p>';
+}
+function plural(n){const m=n%10,h=n%100;if(m===1&&h!==11)return'квартира';if(m>=2&&m<=4&&(h<12||h>14))return'квартиры';return'квартир'}
+const keyOf=d=>d.k+'-'+d.n;
+const area=d=>String(d.a).replace('.',',')+' м²';
+const tagsHTML=d=>`<span class="tags"><span class="tag">${ROOMNAME[d.r]}</span><span class="view ${viewClass(d.v)}">${viewText(d.v)}</span>${d.b?'<span class="booked">Забронирована</span>':''}</span>`;
+const offersHTML=d=>`<div class="offers">
+      <div class="o-h">Траншевая ипотека на 2 года</div>
+      <div class="o-r"><span>ПВ 30% · 1-й год</span><b>${fmt(Math.round(ann(100000,TR_RATE,TR_YEARS)))} ₽/мес</b></div>
+      <div class="o-r"><span>ПВ 20% · 1-й год</span><b>${fmt(Math.round(ann(d.disc*.1,TR_RATE,TR_YEARS)))} ₽/мес</b></div>
+    </div>`;
+const priceHTML=d=>`<div class="note">Со скидкой 5%</div>
+      <div class="main">${fmt(d.disc)} ₽</div>
+      <div class="sub"><span>Красная цена <b>${fmt(d.red)}</b></span><span>Черная цена <b>${fmt(d.blk)}</b></span></div>`;
+const calcHTML=d=>`<div class="calcrow"><div class="lbl"><b>Подробный расчёт</b> ипотека и рассрочка</div><div class="cbtns">
+${[['tr','Транш'],['fam','Семейная'],['std','Стандартная'],['ins','Рассрочка']].map(([p,t])=>`        <button type="button" class="calcbtn" data-key="${keyOf(d)}" data-prog="${p}"><span>${t}</span><i aria-hidden="true">›</i></button>`).join('\n')}
+      </div></div>`;
+function card(d){
+  const t='Корпус '+d.k+', кв. '+d.n,href='#kv-'+keyOf(d);
+  return `<article class="card" data-key="${keyOf(d)}">
+  <a class="plan" href="${href}" aria-label="Открыть квартиру: ${t}">
+    <img src="${d.img}" alt="Планировка: ${t}" loading="lazy">
+    ${tagsHTML(d)}
+  </a>
+  <div class="body">
+    <div class="head"><h2><a href="${href}">${t}</a></h2><a class="open" href="${href}" tabindex="-1">Подробнее ›</a></div>
+    <dl class="params">
+      <div><dt>Этаж</dt><dd>${d.f}</dd></div>
+      <div><dt>Площадь</dt><dd>${area(d)}</dd></div>
+      <div><dt>За м²</dt><dd>${fmt(Math.round(d.disc/d.a))} ₽</dd></div>
+    </dl>
+    ${offersHTML(d)}
+    <div class="price">
+      ${priceHTML(d)}
+      ${calcHTML(d)}
+    </div>
+  </div></article>`;
+}
+function detailHTML(d){
+  const t='Корпус '+d.k+', кв. '+d.n;
+  return `<button type="button" class="back" id="back">‹ Все квартиры</button>
+  <div class="dgrid">
+    <div class="dplan">
+      <button class="plan zoom" type="button" data-img="${d.img}" data-cap="${t} · ${ROOMNAME[d.r]} · ${area(d)}" aria-label="Увеличить планировку">
+        <img src="${d.img}" alt="Планировка: ${t}">${tagsHTML(d)}
+      </button>
+      <p class="hint">Нажмите на планировку, чтобы увеличить.</p>
+    </div>
+    <div class="dinfo">
+      <div><div class="eyebrow">ЖК Парксайд · ${ROOMNAME[d.r]}</div><h1>${t}</h1></div>
+      <dl class="dparams">
+        <div><dt>Корпус</dt><dd>${d.k}</dd></div>
+        <div><dt>Этаж</dt><dd>${d.f}</dd></div>
+        <div><dt>Квартира</dt><dd>№ ${d.n}</dd></div>
+        <div><dt>Площадь</dt><dd>${area(d)}</dd></div>
+        <div><dt>За м²</dt><dd>${fmt(Math.round(d.disc/d.a))} ₽</dd></div>
+        <div><dt>Вид из окна</dt><dd>${d.v==='лес и улица'?'Лес и улица':d.v==='лес'?'Лес':'Улица'}</dd></div>
+      </dl>
+      <div class="price">${priceHTML(d)}</div>
+      ${offersHTML(d)}
+      <button type="button" class="bookbtn bk-apt" data-page="${floorPage(d.k,d.f)}" data-note="Корпус ${d.k}, ${d.f} этаж — план этажа квартиры"><span><b>Поэтажный план и презентация</b><small>Откроется на плане ${d.f} этажа корпуса ${d.k}</small></span><i aria-hidden="true">›</i></button>
+      <p class="fine" style="margin:0;font-size:12px;color:var(--muted)">Статус: ${d.b?'забронирована':'в продаже'}. Цены на 23.11.2026.</p>
+    </div>
+  </div>
+  <h2 class="dcalcs-h">Расчёт платежей</h2>
+  <div class="dcalcs">${PROGS.map(([p,t])=>`<section class="dcalc calc"><h3>${t}</h3>${panelHTML(p,d)}</section>`).join('')}</div>`;
+}
+document.getElementById('sort').onchange=e=>{st.sort=e.target.value;save();render()};
+const dlg=document.getElementById('dlg');
+document.addEventListener('click',e=>{const b=e.target.closest('.plan.zoom');if(!b)return;
+  document.getElementById('dlgImg').src=b.dataset.img;document.getElementById('dlgImg').alt=b.dataset.cap;document.getElementById('dlgCap').textContent=b.dataset.cap;
+  if(dlg.showModal)dlg.showModal()});
+document.getElementById('dlgClose').onclick=()=>dlg.close();
+dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
+
+// Калькулятор платежей: все расчёты от красной цены
+const calc=document.getElementById('calc'),calcBox=document.getElementById('calcBox');
+const ann=(L,rate,years)=>{const r=rate/100/12,n=years*12;return L>0?(r?L*r/(1-Math.pow(1+r,-n)):L/n):0};
+const rub=n=>fmt(Math.round(n))+' ₽';
+const TR_RATE=18,TR_YEARS=30;
+const KIDS=[[1,'1 ребёнок',12,12e6],[2,'2 ребёнка',10,15e6],[3,'3 ребёнка',8,18e6],[4,'4 ребёнка',6,18e6],[5,'5 и более',4,18e6]];
+// Рассрочка: k — коэффициент к красной цене, m — платёж в месяц, остаток вносится в конце срока
+const INS=[
+  {name:'ПВ 70% · 6 мес.',pv:70,months:6,k:.95,m:0,base:'цена со скидкой 5%'},
+  {name:'ПВ 30% · 6 мес.',pv:30,months:6,k:1,m:50000,base:'красная цена'},
+  {name:'ПВ 50% · 1 год',pv:50,months:12,k:.98,m:50000,base:'красная цена минус 2%'}];
+let cs={prog:'tr',trpv:30,kids:1,fpv:20,term:30,ins:0,srate:20,spv:20,sterm:30},cur=null;
+const PROGS=[['tr','Траншевая ипотека'],['fam','Семейная ипотека'],['std','Стандартная ипотека'],['ins','Рассрочка']];
+const byKey=k=>DATA.find(d=>d.k+'-'+d.n===k);
+const years=y=>y+' '+(y%10===1&&y!==11?'год':y%10>=2&&y%10<=4&&(y<12||y>14)?'года':'лет');
+// Панель расчёта: одна и та же разметка в окне и на странице квартиры
+const panelHTML=(prog,d)=>`<div class="cpanel" data-prog="${prog}" data-key="${d.k}-${d.n}">${bodyHTML(prog,d)}</div>`;
+const DISC='<p class="disc">Расчёт ориентировочный. Точные цифры уточняйте у менеджеров на проекте.</p>';
+const bodyHTML=(prog,d)=>bodyCore(prog,d)+DISC;
+function bodyCore(prog,d){
+  const P=d.red;
+  if(prog==='tr')return `<div class="hl"><b>Расчёт от красной цены со скидкой 5% — ${rub(d.disc)}</b><span>Без удорожания, все скидки сохраняются</span></div>
+      <div class="fld"><span class="lbl">Первоначальный взнос</span><div class="group">
+      ${[30,20].map(v=>`<button type="button" class="chip" data-trpv="${v}" aria-pressed="${cs.trpv===v}">${v}%</button>`).join('')}</div></div>
+      <div class="res"></div>`;
+  if(prog==='fam')return `<div class="fld"><span class="lbl">Количество детей</span><div class="group">
+      ${KIDS.map(([v,txt,r])=>`<button type="button" class="chip" data-kids="${v}" aria-pressed="${cs.kids===v}">${txt} <small>${r}%</small></button>`).join('')}</div></div>
+      <label class="fld"><span class="lbl">Первоначальный взнос</span><span class="rng"><input type="range" data-f="fpv" min="20" max="90" step="1" value="${cs.fpv}" aria-label="Первоначальный взнос"><output data-o="fpv"></output></span></label>
+      <label class="fld"><span class="lbl">Срок кредита</span><span class="rng"><input type="range" data-f="term" min="5" max="30" step="1" value="${cs.term}" aria-label="Срок кредита"><output data-o="term"></output></span></label>
+      <div class="res"></div>
+      <p class="fine">Аннуитетный платёж. Расчёт от красной цены ${rub(P)}.</p>`;
+  if(prog==='std')return `<div class="two">
+      <label class="fld"><span class="lbl">Ставка, % годовых</span><input type="number" data-f="srate" min="0" max="50" step="0.1" value="${cs.srate}" inputmode="decimal"></label>
+      <label class="fld"><span class="lbl">Первоначальный взнос, %</span><input type="number" data-f="spv" min="0" max="95" step="1" value="${cs.spv}" inputmode="decimal"></label></div>
+      <label class="fld"><span class="lbl">Срок кредита</span><span class="rng"><input type="range" data-f="sterm" min="1" max="30" step="1" value="${cs.sterm}" aria-label="Срок кредита"><output data-o="sterm"></output></span></label>
+      <div class="res"></div>
+      <p class="fine">Аннуитетный платёж. Расчёт от цены со скидкой 5% — ${rub(d.disc)}.</p>`;
+  return `<div class="fld"><span class="lbl">Вариант рассрочки</span><div class="group">
+      ${INS.map((o,i)=>`<button type="button" class="chip" data-ins="${i}" aria-pressed="${cs.ins===i}">${o.name}</button>`).join('')}</div></div>
+      <div class="res"></div>`;
+}
+function calcPanel(root){
+  const prog=root.dataset.prog,d=byKey(root.dataset.key),P=d.red,el=root.querySelector('.res'),out=(k,v)=>{const o=root.querySelector(`[data-o="${k}"]`);if(o)o.textContent=v};
+  if(prog==='tr'){
+    const P=d.disc; // транш считается от цены со скидкой 5%
+    const pv=P*cs.trpv/100,total=P-pv;
+    // ПВ 30%: 1-й год выдают 100 000 ₽, платёж как за 100 000 ₽; 2-й год ещё 20%, платёж как за 100 000 ₽ + 20% стоимости
+    // ПВ 20%: 1-й год выдают 10%, платёж как за 10%; 2-й год ещё 20%, платёж как за 30% стоимости
+    const s=cs.trpv===30
+      ?{g1:100000,g1t:'100 000 ₽',b1:100000,g2:.2*P,b2:100000+.2*P}
+      :{g1:.1*P,g1t:'10% стоимости',b1:.1*P,g2:.2*P,b2:.3*P};
+    el.innerHTML=`<div class="pvbox"><div><div class="t">Первоначальный взнос ${cs.trpv}%</div><div class="p">${rub(pv)}</div></div><div class="cr"><div class="t">Сумма кредита</div><div class="v">${rub(total)}</div></div></div>
+      <div class="stages">
+        <div class="stage"><div class="t">1-й год</div><div class="p">${rub(ann(s.b1,TR_RATE,TR_YEARS))}</div><div class="s">в месяц · банк выдаёт ${s.g1t}${cs.trpv===30?'':' — '+rub(s.g1)}</div></div>
+        <div class="stage"><div class="t">2-й год</div><div class="p">${rub(ann(s.b2,TR_RATE,TR_YEARS))}</div><div class="s">в месяц · банк выдаёт ещё 20% — ${rub(s.g2)}</div></div>
+      </div>`;
+  }else if(prog==='fam'){
+    const [,,rate,max]=KIDS.find(k=>k[0]===cs.kids);
+    let pv=P*cs.fpv/100,loan=P-pv,capped=false;
+    if(loan>max){loan=max;pv=P-max;capped=true}
+    const pay=ann(loan,rate,cs.term),over=pay*cs.term*12-loan;
+    out('fpv',cs.fpv+'%');out('term',years(cs.term));
+    el.innerHTML=`${capped?`<div class="warn">Лимит кредита по семейной ипотеке — ${rub(max)}. Взнос нужно увеличить до ${rub(pv)} (${(pv/P*100).toLocaleString('ru-RU',{maximumFractionDigits:1})}%).</div>`:''}
+      <div class="big"><div class="t">Ежемесячный платёж</div><div class="p">${rub(pay)}</div><div class="s">ставка ${rate}% · ${cs.term*12} платежей</div></div>
+      <dl class="facts"><dt>Первоначальный взнос</dt><dd>${rub(pv)}</dd><dt>Сумма кредита</dt><dd>${rub(loan)}</dd><dt>Переплата по процентам</dt><dd>${rub(over)}</dd></dl>`;
+  }else if(prog==='std'){
+    const D=d.disc,y=cs.sterm;out('sterm',years(y));
+    if(!(cs.srate>=0&&cs.srate<=50)||!(cs.spv>=0&&cs.spv<100)){el.innerHTML='<div class="warn">Укажите ставку от 0 до 50% и взнос от 0 до 99%.</div>';return}
+    const pv=D*cs.spv/100,loan=D-pv,pay=ann(loan,cs.srate,y),over=pay*y*12-loan;
+    el.innerHTML=`<div class="big"><div class="t">Ежемесячный платёж</div><div class="p">${rub(pay)}</div><div class="s">ставка ${String(cs.srate).replace('.',',')}% · ${y*12} платежей</div></div>
+      <dl class="facts"><dt>Цена со скидкой 5%</dt><dd>${rub(D)}</dd><dt>Первоначальный взнос ${String(cs.spv).replace('.',',')}%</dt><dd>${rub(pv)}</dd><dt>Сумма кредита</dt><dd>${rub(loan)}</dd><dt>Переплата по процентам</dt><dd>${rub(over)}</dd></dl>`;
+  }else{
+    const o=INS[cs.ins],price=o.k===.95?d.disc:Math.round(P*o.k),pv=price*o.pv/100,paid=o.m*o.months,rest=price-pv-paid;
+    const term=o.months===12?'1 год':o.months+' месяцев';
+    el.innerHTML=`<dl class="facts"><dt>Стоимость по программе (${o.base})</dt><dd>${rub(price)}</dd><dt>Срок рассрочки</dt><dd>${term}</dd></dl>
+      <div class="stages">
+        <div class="stage"><div class="t">Сразу</div><div class="p">${rub(pv)}</div><div class="s">первоначальный взнос ${o.pv}%</div></div>
+        <div class="stage"><div class="t">Ежемесячно</div><div class="p">${o.m?rub(o.m):'—'}</div><div class="s">${o.m?o.months+' платежей, всего '+rub(paid):'без промежуточных платежей'}</div></div>
+        <div class="stage"><div class="t">Через ${term}</div><div class="p">${rub(rest)}</div><div class="s">остаток одним платежом</div></div>
+      </div>`;
+  }
+}
+const calcAll=(scope=document)=>scope.querySelectorAll('.cpanel').forEach(calcPanel);
+function openCalc(key){cur=byKey(key);if(!cur)return;drawCalc();if(calc.showModal)calc.showModal()}
+function drawCalc(){
+  const d=cur,t='Корпус '+d.k+', кв. '+d.n;
+  calcBox.innerHTML=`<div class="ch"><img src="${d.img}" alt="">
+    <div><h3 id="calcTitle">${t}</h3><p>${ROOMNAME[d.r]} · ${String(d.a).replace('.',',')} м² · ${d.f} этаж</p><p>Красная цена <b>${rub(d.red)}</b></p></div>
+    <button type="button" class="x" id="calcClose">Закрыть</button></div>
+    <div class="tabs" role="group" aria-label="Программа">${PROGS.map(([v,txt])=>`<button type="button" class="chip" data-tab="${v}" aria-pressed="${cs.prog===v}">${txt}</button>`).join('')}</div>
+    <div class="cb">${panelHTML(cs.prog,d)}</div>`;
+  calcAll(calcBox);
+}
+// Настройки (ПВ, дети, ставка) общие для окна и страницы квартиры
+document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;
+  if(b.id==='calcClose')return calc.close();
+  if(b.dataset.tab){cs.prog=b.dataset.tab;drawCalc();return}
+  const p=b.closest('.cpanel');if(!p)return;
+  if(b.dataset.trpv)cs.trpv=+b.dataset.trpv;else if(b.dataset.kids)cs.kids=+b.dataset.kids;else if(b.dataset.ins)cs.ins=+b.dataset.ins;else return;
+  p.innerHTML=bodyHTML(p.dataset.prog,byKey(p.dataset.key));calcPanel(p)});
+document.addEventListener('input',e=>{const f=e.target.dataset.f,p=e.target.closest('.cpanel');if(!f||!p)return;
+  const v=e.target.value===''?NaN:+e.target.value;cs[f]=v;calcPanel(p)});
+calc.addEventListener('click',e=>{if(e.target===calc)calc.close()});
+document.addEventListener('click',e=>{const b=e.target.closest('.calcbtn');if(b){e.preventDefault();cs.prog=b.dataset.prog;openCalc(b.dataset.key);return}
+  const c=e.target.closest('.card');if(c&&!e.target.closest('a')){location.hash='kv-'+c.dataset.key}
+  if(e.target.closest('#back')){location.hash=''}});
+// Презентация: страницы PDF картинками book/p-NN.jpg
+const BOOK_PAGES=19;
+// страница с планом этажа: [этаж с, этаж по, страница]
+const FLOORS={1:[[2,2,3],[3,18,4],[19,20,5],[21,22,6]],2:[[1,2,7],[3,18,8],[19,20,9],[21,22,10]],3:[[1,2,11],[3,19,12],[20,21,13],[22,27,14],[28,28,15]]};
+const floorPage=(k,f)=>{const r=(FLOORS[k]||[]).find(([a,b])=>f>=a&&f<=b);return r?r[2]:1};
+const book=document.getElementById('book'),bkPages=document.getElementById('bkPages');
+function openBook(page,note){
+  if(!bkPages.children.length)bkPages.innerHTML=Array.from({length:BOOK_PAGES},(_,i)=>{const n=i+1,portrait=n===1||n===BOOK_PAGES;
+    return `<figure class="bk-page" id="bk-${n}"><img src="book/p-${String(n).padStart(2,'0')}.jpg" alt="Страница ${n}" loading="lazy" width="${portrait?1000:1600}" height="${portrait?1414:1132}"><figcaption></figcaption></figure>`}).join('');
+  bkPages.querySelectorAll('figcaption').forEach(c=>c.textContent='');
+  bkPages.querySelectorAll('.bk-page').forEach(f=>f.classList.remove('hit'));
+  const t=document.getElementById('bk-'+page);
+  if(note&&t){t.classList.add('hit');t.querySelector('figcaption').textContent=note}
+  if(book.showModal&&!book.open)book.showModal();
+  requestAnimationFrame(()=>{if(t)bkPages.scrollTop=t.offsetTop-bkPages.offsetTop-8});
+}
+document.addEventListener('click',e=>{const b=e.target.closest('.bookbtn');if(b){openBook(+b.dataset.page,b.dataset.note);return}
+  const g=e.target.closest('[data-go]');if(g){const t=document.getElementById('bk-'+g.dataset.go);if(t)bkPages.scrollTop=t.offsetTop-bkPages.offsetTop-8}});
+document.getElementById('bookClose').onclick=()=>book.close();
+book.addEventListener('click',e=>{if(e.target===book)book.close()});
+// Карточка квартиры: #kv-<корпус>-<номер>
+let listY=0,inDetail=false;
+function route(){
+  const m=location.hash.match(/^#kv-(\d+)-(\d+)$/),d=m&&DATA.find(x=>x.k==m[1]&&x.n==m[2]);
+  const det=document.getElementById('detail');
+  if(d){if(!inDetail)listY=scrollY;inDetail=true;det.innerHTML=detailHTML(d);calcAll(det);det.hidden=false;
+    ['hero','bar','list'].forEach(id=>document.getElementById(id).hidden=true);document.title=`Корпус ${d.k}, кв. ${d.n} — Парксайд`;scrollTo(0,0);}
+  else{det.hidden=true;det.innerHTML='';['hero','bar','list'].forEach(id=>document.getElementById(id).hidden=false);document.title='Парксайд_Старт Продаж_';
+    if(inDetail){inDetail=false;scrollTo(0,listY)}}
+}
+addEventListener('hashchange',route);
+(function(){const ps=DATA.map(d=>d.disc);const c=r=>DATA.filter(d=>d.r===r).length;
+const bk=DATA.filter(d=>d.b).length;
+document.getElementById('lead').textContent='Три корпуса у леса на улице Красного Маяка. Цены со скидкой 5%, планировки из поэтажных планов застройщика. Нажмите на планировку, чтобы увеличить, или на кнопки подробного расчёта: траншевая, семейная, стандартная ипотека и рассрочка.';
+const R=[['st','Студии',c('st')],['1','1-комн.',c('1')],['2','2-комн.',c('2')],['3','3-комн.',c('3')]];
+document.getElementById('stats').innerHTML=`<div class="stat total"><span class="k">В продаже</span><span class="v">${DATA.length} ${plural(DATA.length)}</span><span class="k">3 корпуса${bk?' · '+bk+' забронировано':''}</span></div>
+<div class="stat range"><span class="k">Цены со скидкой 5%</span><span class="v">${mln(Math.min(...ps))} – ${mln(Math.max(...ps))} ₽</span><span class="k">от ${fmt(Math.round(Math.min(...DATA.map(d=>d.disc/d.a))))} ₽ за м²</span></div>
+${R.map(([v,t,n])=>`<button type="button" class="stat room" data-room="${v}"><span class="v">${n}</span><span class="k">${t}</span></button>`).join('')}`;
+document.getElementById('stats').addEventListener('click',e=>{const s=e.target.closest('.room');if(!s)return;st.room=st.room===s.dataset.room?'all':s.dataset.room;save();render();document.querySelector('.bar').scrollIntoView({behavior:'smooth'})});
+})();
+render();
+route();
+</script>
+
+</body></html>
