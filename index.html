@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html><html lang="ru"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <title>Парксайд_Старт Продаж_</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -229,9 +229,9 @@ footer{padding-bottom:72px}
   <div class="brandbar"><span class="logo"><img src="logo.png" alt="ПРОСТОР недвижимость" width="131" height="34"></span><span class="city">Москва<br>Простор-недвижимость</span><span class="pill">Департамент брокериджа</span></div>
   <section class="hero" id="hero">
     <div class="hero-text">
-      <div class="eyebrow">ЖК Парксайд · очередь 2 · цены на 23.11.2026</div>
+      <div class="eyebrow">ЖК Парксайд · очередь 2 · цены на <span class="actual-date"></span></div>
       <h1>Квартиры в наличии</h1>
-      <p class="actual"><span class="dot" aria-hidden="true"></span>Наличие свободных лотов актуально на 23.11.2026</p>
+      <p class="actual"><span class="dot" aria-hidden="true"></span>Наличие свободных лотов актуально на <span class="actual-date"></span></p>
       <p class="lead" id="lead"></p>
     </div>
     <div class="stats" id="stats"></div>
@@ -293,8 +293,12 @@ const ROOMNAME={st:'Студия','1':'1-комн.','2':'2-комн.','3':'3-к�
 const VIEWS=[['all','Любой вид'],['лес','На лес'],['улица','На улицу']];
 const fmt=n=>n.toLocaleString('ru-RU').replace(/,/g,' ');
 const mln=n=>(n/1e6).toLocaleString('ru-RU',{maximumFractionDigits:1})+' млн';
+const ACTUAL='23.11.2026'; // дата цен и наличия — менять только здесь
+document.querySelectorAll('.actual-date').forEach(s=>s.textContent=ACTUAL);
 let st={room:'all',view:'all',sort:'price-asc'};
 const save=()=>{try{localStorage.setItem('parkside-filters',JSON.stringify(st))}catch(e){}};
+// восстановить фильтры, принимая только известные значения
+try{const s=JSON.parse(localStorage.getItem('parkside-filters'))||{};if(ROOMS.some(r=>r[0]===s.room))st.room=s.room;if(VIEWS.some(v=>v[0]===s.view))st.view=s.view;if([...document.getElementById('sort').options].some(o=>o.value===s.sort))st.sort=s.sort}catch(e){}
 const viewClass=v=>v==='лес'?'forest':'street';
 const viewText=v=>v==='лес'?'Вид на лес':v==='улица'?'Вид на улицу':'Лес и улица';
 
@@ -387,7 +391,7 @@ function detailHTML(d){
       <div class="price">${priceHTML(d)}</div>
       ${offersHTML(d)}
       <button type="button" class="bookbtn bk-apt" data-page="${floorPage(d.k,d.f)}" data-note="Корпус ${d.k}, ${d.f} этаж — план этажа квартиры"><span><b>Поэтажный план и презентация</b><small>Откроется на плане ${d.f} этажа корпуса ${d.k}</small></span><i aria-hidden="true">›</i></button>
-      <p class="fine" style="margin:0;font-size:12px;color:var(--muted)">Статус: ${d.b?'забронирована':'в продаже'}. Цены на 23.11.2026.</p>
+      <p class="fine" style="margin:0;font-size:12px;color:var(--muted)">Статус: ${d.b?'забронирована':'в продаже'}. Цены на ${ACTUAL}.</p>
     </div>
   </div>
   <h2 class="dcalcs-h">Расчёт платежей</h2>
